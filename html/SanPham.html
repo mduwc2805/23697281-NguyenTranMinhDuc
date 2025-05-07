@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/SanPham.css">
+    <!-- js -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/myJS.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-xl sticky-top mb-4" style="background-color: black;">
+        <!-- Logo  -->
+        <div class="nav-logo ">
+            <a href="../html/TrangChu.html">
+                <img src="../img/logo.png" alt="logo" style="width: 70x; height: 70px;">
+                <span>Super Glasses</span>
+            </a>
+        </div>
+
+        <!-- toggler -->
+        <div class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu" >
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <!-- menu links -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav">
+
+                <li class="">
+                    <a class="" href="../html/TrangChu.html">
+                        <i class="fa fa-home"></i>
+                        TRANG CHỦ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        GIỚI THIỆU
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
+                        <i class="fa fa-list" ></i>
+                        SẢN PHẨM    
+                    </a>
+                    <div class="position-relative">
+                        <div class="dropdownSanPham">
+                            <div class="row">
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>KÍNH MÁT</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Kính Mát Nam</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Mát Nữ</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Thể Thao</a></div>
+                                        <div class="banner3"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>TRÒNG KÍNH</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Tròng Kính Chống Ánh Sáng Xanh</a></div>
+                                        <div><a href="../html/SanPham.html">Tròng Kính Đổi Màu</a></div>
+                                        <div><a href="../html/SanPham.html">Đa Tròng</a></div>
+                                        <div class="banner4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>GỌNG KÍNH</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Nửa Khung</a></div>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Khoan</a></div>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Titan</a></div>
+                                        <div class="banner5"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>KÍNH ÁP TRÒNG</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Kính Áp Tròng Không Màu</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Áp Tròng Màu</a></div>
+                                        <br>
+                                        <h5>KÍNH TRẺ EM</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Trẻ Em</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Mát Trẻ Em</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+                
+                <li class=" ">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        TIN TỨC
+                    </a>
+                </li>
+                
+                <li class=" ">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        LIÊN HỆ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="../html/DangKy.html">
+                        
+                        ĐĂNG KÝ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="../html/DangNhap.html">
+                        
+                        ĐĂNG NHẬP
+                    </a>
+                </li>
+
+                <div>
+                    <form action="">
+                        <div class="group-form">
+                            <input type="text" class="" placeholder="Tìm kiếm ..." size="9%">
+                            <button class="btn btn-outline-secondary bg-light" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <!-- FirstLine -->
+    <div class="FirstLine d-flex justify-content-center align-items-center">
+        <div class="DieuHuong">
+            <div><a href="../html/TrangChu.html">Trang chủ</a></div> &nbsp;
+            <div><a href="#">/</a></div> &nbsp;
+            <div><a class="text-dark font-weight-bold" href="../html/SanPham.html">Cửa hàng</a></div>
+        </div>
+            
+        <div class="KetQua">Hiển thị tất cả 8 kết quả</div>
+        <form>
+            <select>
+                <option value="orderedByDefault" selected="selected">Thứ tự mặc định</option>
+                <option value="orderedByNewest">Mới nhất</option>
+                <option value="orderedByPriceDesc">Giá cao đến thấp</option>
+                <option value="orderedByPrice">Giá thấp đến cao</option>
+            </select>
+        </form>
+    </div>
+   
+    <!-- Color -->
+    <div class="content ">
+        <div class="line">
+            <div class="LocMau">
+                <h6 style="text-align: center; font-weight: bold;">Màu Sắc</h6>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: black;"></div>
+                    <div class="color-option" style="background-color: white;"></div>
+                    <div class="color-option" style="background-color: seagreen;"></div>
+                    <div class="color-option" style="background-color: brown;"></div>
+                </div>
+            </div>
+            
+            <div class="SanPham row">
+                <div id="Card1" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/GKYS9267/GKYS9267Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GKYS9267/GKYS9267White.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GKYS9267/GKYS9267Yellow.jpeg); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">GK. GỌNG CỐT YS9267<br>(48.21.151)</div>
+                    <div class="price">250.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card2" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/GKS20272/GKS20272Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GKS20272/GKS20272Brown.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GKS20272/GKS20272Yellow.jpeg); background-size: cover;"></a></div>
+                        <div class="Anh" style="background-image: url(../img/GKS20272/GKS20272Green.jpeg); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</div>
+                    <div class="price">300.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card3" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+                    <div style="height: 46px;"></div>
+                    <div class="name mt-2">GK. GỌNG NHỰA AN221425<br>(50.18.145)</div>
+                    <div class="price">350.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card4" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/black.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/blue.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/white.webp); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT GENTLE <br> MONSTER HOVO</div>
+                    <div class="price">299.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card5" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Black.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Yellow.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Blue.webp); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT PHÂN CỰC 9<br>LỚP LỌC VEITHDIA 8210</div>
+                    <div class="price">290.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card6" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/White-Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Brown.jpeg); background-size: cover;"></a></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Yellow-Black.jpeg); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT GENTLE <br> MONSTER HOVO</div>
+                    <div class="price">250.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+                
+                <div id="Card3" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+                    <div style="height: 46px;"></div>
+                    <div class="name mt-2">GK. GỌNG NHỰA AN221425<br>(50.18.145)-COPY</div>
+                    <div class="price">350.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card4" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/black.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/blue.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/GentleMonsterHovo/white.webp); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT GENTLE <br> MONSTER HOVO-COPY</div>
+                    <div class="price">299.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card5" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Black.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Yellow.webp); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhVeihdia8210/Blue.webp); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT PHÂN CỰC 9<br>LỚP LỌC VEITHDIA 8210-COPY</div>
+                    <div class="price">290.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card6" class="Card col-xl-3 col-md-6 col-12">
+                    <div class="Anh-chinh"></div>
+
+                    <div class="LocAnh mt-2">
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/White-Black.jpeg); background-size: cover;"></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Brown.jpeg); background-size: cover;"></a></div>
+                        <div class="Anh" style="background-image: url(../img/KinhRamAN229080/Yellow-Black.jpeg); background-size: cover;"></a></div>
+                    </div>
+
+                    <div class="name mt-2">KÍNH MÁT GENTLE <br> MONSTER HOVO-COPY</div>
+                    <div class="price">250.000 vnđ                 <i class="fa-solid fa-arrow-up"></i></div>
+                </div>
+
+                <div id="Card7" class="Card col-xl-3 col-md-6 col-12">
+
+                </div>
+
+                <div id="Card8" class="Card col-xl-3 col-md-6 col-12">
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+
+    <footer class="row">
+        <div class="col-xl-7 col-12">
+            <div class="row">
+                <div class="logo-footer col-12"><img src="../img/logo.png" alt="" height="100px" width="100px"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="color: white; padding-left: 10%; padding-top: 5%; font-size: large; font-weight: 600;">Đăng kí để nhận tin mới nhất</div>
+            </div>
+
+            <div class="row">
+                <div class="inputEmail col-12">
+                    <input type="text" placeholder="Để lại email của bạn">
+                    <i class="fa-solid fa-arrow-up-long" style=" background-color: white; color: orange; padding: 20px; border-radius: 100px; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="padding-left: 10%;">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-12 pl-5">
+            <div class="title-footer">SẢN PHẨM</div>
+            <div class="info-footer">
+                <div><a href="#">The TiTan</a></div>
+                <div><a href="#">Gọng Kính</a></div>
+                <div><a href="#">Tròng Kính</a></div>
+                <div><a href="#">Kính Râm</a></div>
+                <div><a href="#">Kính râm trẻ em</a></div>
+            </div>
+
+            <div class="title-footer">CHÍNH SÁCH MUA HÀNG</div>
+            <div class="info-footer">
+                <div><a href="#">Hình thức thanh toán</a></div>
+                <div><a href="#">Chính sách giao hàng</a></div>
+                <div><a href="#">Chinh sách bảo hành</a></div>
+
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-12 pl-5">
+            <div class="title-footer">THÔNG TIN LIÊN HỆ</div>
+            <div class="info-footer">
+                <div><a href="">1900xxxx</a></div>
+                <div><a href="">marketing@superglasses.com</a></div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

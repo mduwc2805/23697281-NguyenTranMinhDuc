@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/TrangChu.css">
+    <!-- js -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/myJS.js"></script>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-xl sticky-top mb-4" style="background-color: black;">
+        <!-- Logo  -->
+        <div class="nav-logo ">
+            <a href="../html/TrangChu.html">
+                <img src="../img/logo.png" alt="logo" style="width: 70x; height: 70px;">
+                <span>Super Glasses</span>
+            </a>
+        </div>
+
+        <!-- toggler -->
+        <div class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu" >
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <!-- menu links -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav">
+
+                <li class="active">
+                    <a class="" href="../html/TrangChu.html">
+                        <i class="fa fa-home"></i>
+                        TRANG CHỦ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        GIỚI THIỆU
+                    </a>
+                </li>
+
+                <li class="">
+                    <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
+                        <i class="fa fa-list" ></i>
+                        SẢN PHẨM    
+                    </a>
+                    <div class="position-relative">
+                        <div class="dropdownSanPham">
+                            <div class="row">
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>KÍNH MÁT</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Kính Mát Nam</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Mát Nữ</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Thể Thao</a></div>
+                                        <div class="banner3"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>TRÒNG KÍNH</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Tròng Kính Chống Ánh Sáng Xanh</a></div>
+                                        <div><a href="../html/SanPham.html">Tròng Kính Đổi Màu</a></div>
+                                        <div><a href="../html/SanPham.html">Đa Tròng</a></div>
+                                        <div class="banner4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>GỌNG KÍNH</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Nửa Khung</a></div>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Khoan</a></div>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Titan</a></div>
+                                        <div class="banner5"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-6">
+                                    <div class="card-info">
+                                        <h5>KÍNH ÁP TRÒNG</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Kính Áp Tròng Không Màu</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Áp Tròng Màu</a></div>
+                                        <br>
+                                        <h5>KÍNH TRẺ EM</h5>
+                                        <hr>
+                                        <div><a href="../html/SanPham.html">Gọng Kính Trẻ Em</a></div>
+                                        <div><a href="../html/SanPham.html">Kính Mát Trẻ Em</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+                
+                <li class=" ">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        TIN TỨC
+                    </a>
+                </li>
+                
+                <li class=" ">
+                    <a class="" href="#">
+                        <i class="fa fa-shop" ></i>
+                        LIÊN HỆ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="../html/DangKy.html">
+                        
+                        ĐĂNG KÝ
+                    </a>
+                </li>
+
+                <li class="">
+                    <a class="" href="../html/DangNhap.html">
+                        
+                        ĐĂNG NHẬP
+                    </a>
+                </li>
+
+                <div>
+                    <form action="">
+                        <div class="group-form">
+                            <input type="text" class="" placeholder="Tìm kiếm ..." size="9%">
+                            <button class="btn btn-outline-secondary bg-light" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- start carousel -->
+    <div id="carouselId" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselId" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="../img/banner1.png" alt="banner1" class="img-fluid" style="height: 100%;">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h3>"🌟 Super Glasses – Định hình phong cách, nâng tầm trải nghiệm! 🌟<br>
+                        ✨ Khám phá thế giới rõ nét hơn với những chiếc mắt kính hiện đại, thời trang và bảo vệ đôi mắt tuyệt đối."
+                    </h3>
+                    <button type="button" class="btn btn-outline-light btn-lg">
+                        SHOPPING NOW!
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="../img/banner2.jpg" alt="banner2" class="img-fluid" style="width: 100%;">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h3>"👓 Tự tin thể hiện cá tính, chinh phục mọi ánh nhìn cùng thiết kế đẳng cấp.<br>
+                        🔆 Cân bằng giữa phong cách và công nghệ – chống ánh sáng xanh, bảo vệ UV, tầm nhìn hoàn hảo!"
+                    </h3>
+                    <button type="button" class="btn btn-outline-light btn-lg">
+                        SHOPPING NOW!
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- end caroseal -->
+
+    <!-- banner sale -->
+    
+    
+    <!-- San pham ban chay -->
+    <div class=" bg-light">
+        <div class="container ">
+            <h2 class="text-center mb-5">🔥 Sản Phẩm Bán Chạy 🔥</h2>
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/GKYS9267/GKYS9267Black.jpeg"  alt="Sản phẩm 1" height="auto" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">GK. GỌNG <br> CỐT <br> YS9267 (48.21.151)</h6>
+                            <div class="price-glasses">250.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 2" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</h6>
+                            <div class="price-glasses">300.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/GKAN221425/GKAN221425.jpeg" class="img-fluid" alt="Sản phẩm 3" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">GK. GỌNG NHỰA AN221425 (50.18.145)</h6>
+                            <div class="price-glasses">350.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/GentleMonsterHovo/blue.webp" class="img-fluid" alt="Sản phẩm 4" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">KÍNH MÁT GENTLE MONSTER HOVO</h6>
+                            <div class="price-glasses">299.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/KinhVeihdia8210/Black.webp" class="img-fluid" alt="Sản phẩm 5" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">KÍNH MÁT PHÂN CỰC 9<br>LỚP LỌC VEITHDIA 8210</h6>
+                            <div class="price-glasses">290.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <a class="card" href="../html/SanPham.html">
+                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 6" width="100%">
+                        <div class="info-glasses card-body">
+                            <h6 class="font-weight-bold">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</h6>
+                            <div class="price-glasses">300.000 VND</div>
+                            <div class="dangBanChay">🔥 Đang bán chạy!</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function startCountdown() {
+            let totalSeconds = 24 * 7 * 86400 + 3 * 86400 + 20 * 3600 + 52 * 60 + 3;
+    
+            setInterval(() => {
+                totalSeconds--;
+    
+                let weeks = Math.floor(totalSeconds / (7 * 86400));
+                let days = Math.floor((totalSeconds % (7 * 86400)) / 86400);
+                let hours = Math.floor((totalSeconds % 86400) / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+    
+                document.getElementById("weeks").innerText = weeks;
+                document.getElementById("days").innerText = days;
+                document.getElementById("hours").innerText = hours;
+                document.getElementById("minutes").innerText = minutes;
+                document.getElementById("seconds").innerText = seconds;
+            }, 1000);
+        }
+    
+        startCountdown();
+    </script>
+    
+</body>
+</html>

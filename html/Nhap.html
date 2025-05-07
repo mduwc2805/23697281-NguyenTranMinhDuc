@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .product-card {
+            border: 1px solid #f8f9fa; /* Light border */
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336; /* Red */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .color-option {
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #eee; /* Placeholder color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #28a745; /* Green */
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mt-4 bg-light">
+        <img class="img-fluid d-block m-auto" src="../img/discount.jpg" alt="" width="95%">
+    </div>
+    <div class="d-flex justify-content-center gap-1 mt-4 mb-4" style="gap: 1%;">
+        <div class="countdown-box">
+            <span id="weeks">24</span>
+            <div class="countdown-label">TUẦN</div>
+        </div>
+        <div class="countdown-box">
+            <span id="days">3</span>
+            <div class="countdown-label">NGÀY</div>
+        </div>
+        <div class="countdown-box">
+            <span id="hours">20</span>
+            <div class="countdown-label">GIỜ</div>
+        </div>
+        <div class="countdown-box">
+            <span id="minutes">52</span>
+            <div class="countdown-label">PHÚT</div>
+        </div>
+        <div class="countdown-box">
+            <span id="seconds">3</span>
+            <div class="countdown-label">GIÂY</div>
+        </div>
+    </div>  
+    <!-- end banner sale -->
+
+    <div id="SanPhamBanChay">
+        <div class="groupSanPhamBanChay">
+            <div class="container bg-danger">
+                <div class="row justify-content-center">
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <img  src="../img/GKAN221425/GKAN221425ver2.jpeg" alt="">
+                    </div>
+                    
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <img src="../img/GentleMonsterHovo/black.webp" alt="">
+                    </div>
+
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <img src="../img/GKYS9267/GKYS9267Black.jpeg" alt="">
+                        <div class="name">GK. GỌNG CỐT YS9267<br>(48.21.151)</div>
+                        <div class="price">250.000 vnđ</div> 
+                        
+                    </div>
+                    
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <img src="../img/KinhRamAN229080/Black.jpeg" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid mt-5" style="background-color: rgb(242, 129, 114);">
+        <h2 class="mb-4">Bộ sưu tập mới nhất</h2>
+        <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+      
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-6 col-md-4 col-xl-2">
+                  <div class="card">
+                    <img src="../img/GKAN221425/GKAN221425.jpeg" class="card-img-top" alt="SP1">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 1</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP2" class="card-img-top" alt="SP2">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 2</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-md-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP3" class="card-img-top" alt="SP3">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 3</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-xl-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP4" class="card-img-top" alt="SP4">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 4</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-xl-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP5" class="card-img-top" alt="SP5">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 5</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Slide 2 (ví dụ thêm sản phẩm 6–10) -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-6 col-md-4 col-xl-2">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP6" class="card-img-top" alt="SP6">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 6</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP7" class="card-img-top" alt="SP7">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 7</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-md-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP8" class="card-img-top" alt="SP8">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 8</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-xl-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP9" class="card-img-top" alt="SP9">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 9</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2 d-none d-xl-block">
+                  <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=SP10" class="card-img-top" alt="SP10">
+                    <div class="card-body">
+                      <h5 class="card-title">Sản phẩm 10</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+      
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#multiItemCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
