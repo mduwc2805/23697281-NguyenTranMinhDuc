@@ -1,0 +1,226 @@
+/* Dòng đầu tiên trong content */
+.FirstLine{
+    display: flex;
+}
+.FirstLine .DieuHuong{
+    margin-left: 5%;
+    margin-right: auto;
+    display: flex;
+}
+.FirstLine .DieuHuong a{
+    justify-content: center;
+    text-decoration: none;
+    color: grey;
+}
+.FirstLine form {
+    margin-right: 5%;
+    margin-left: 1%;
+}
+.FirstLine form select{
+    padding: 5%;
+    border-radius: 10px;
+}
+
+/* End */
+
+/* Loc color */
+.content .line .LocMau .color-options {
+    display: flex;
+    justify-content: center;
+}
+.content .line .LocMau .color-options .color-option {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #eee;
+}
+.content .line .LocMau .color-options .color-option:hover{
+    border: 2px solid red;
+}
+/* End */
+
+/* Content */
+.content{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.content .line{
+    display: flex;
+}
+.content .line .LocMau{
+    width: 20%;
+    margin-left: 5%;
+}
+.content .line .SanPham{
+    display: flex;
+    width: 75%;
+    justify-content: center;
+}
+.content .line .SanPham .Card{
+    height: 500px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.content .line .SanPham .Card .LocAnh{
+    display: flex;
+    justify-content: center;
+}
+/* Anh chinh 1 */
+.content .line .SanPham #Card1 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/GKYS9267/GKYS9267.jpeg);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+.content .line .SanPham #Card1 .Anh-chinh:hover{
+    background-image: url(../img/GKYS9267/GKYS9267Black.jpeg);
+}
+/* End anh chinh 1 */
+
+/* Anh chinh 2 */
+.content .line .SanPham #Card2 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/GKS20272/GKS20272Black.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+/* End anh chinh 2 */
+
+/* Anh chinh 3 */
+.content .line .SanPham #Card3 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/GKAN221425/GKAN221425.jpeg);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+.content .line .SanPham #Card3 .Anh-chinh:hover{
+    background-image: url(../img/GKAN221425/GKAN221425ver2.jpeg);
+}
+/* End anh chinh 3 */
+
+/* Anh chinh 4 */
+.content .line .SanPham #Card4 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/GentleMonsterHovo/black.webp);
+    background-size: cover;
+    background-position: center;
+}
+/* End anh chinh 4 */
+
+/* Anh chinh 5 */
+.content .line .SanPham #Card5 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/KinhVeihdia8210/Black.webp);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+
+}
+.content .line .SanPham #Card5 .Anh-chinh:hover{
+    background-image: url(../img/KinhVeihdia8210/Yellow.webp);
+}
+/* End anh chinh 5 */
+
+/* Anh chinh 6 */
+.content .line .SanPham #Card6 .Anh-chinh{
+    height: 69%;
+    border-radius: 3%;
+    background-image: url(../img/KinhRamAN229080/Black.jpeg);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+.content .line .SanPham #Card6 .Anh-chinh:hover{
+    background-image: url(../img/KinhRamAN229080/White-Black.jpeg);
+}
+/* End anh chinh 6 */
+.content .line .SanPham .Card .LocAnh .Anh{
+    border: 2px solid #eee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.content .line .SanPham .Card .LocAnh .Anh:hover{
+    border: 2px solid black;
+}
+.content .line .SanPham .Card .name{
+    font-size: 15px;
+    text-align: left;
+}
+.content .line .SanPham .Card .price{
+    color: white;
+    padding: 3%;
+    border-radius: 100px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(85, 213, 210);
+    white-space: pre;
+    transition: background-color 0.5s ease-in-out;
+}
+.content .line .SanPham .Card:hover .price{
+    background-color: rgb(245, 143, 93);
+}
+.content .line .SanPham .Card:hover .price i{
+    transition: transform 0.5s ease-in-out;
+}
+.content .line .SanPham .Card:hover .price i{
+    transform: rotate(90deg);
+}
+/* End */
+
+/* footer */
+footer{
+    background-color: rgb(85, 213, 210);
+}
+footer .logo-footer{
+    padding-left: 10%;
+    padding-top: 5%;
+}
+footer .inputEmail{
+    padding-left: 10%;
+    padding-top: 1%;
+}
+footer .inputEmail input{
+    height: 50px;
+    width: 300px;
+    color: rgb(85, 213, 210);
+    background-color: #eee;
+    border-radius: 100px;
+    border: 0px;
+    padding: 10px 20px;
+    white-space: pre;
+}
+footer .title-footer{
+    margin-top: 10%;
+    color: aliceblue;
+    font-size: small;
+    font-weight: bold;
+    opacity: 70%;
+}
+
+footer .info-footer{
+    color: aliceblue;
+    font-weight: 500;
+}
+footer .info-footer div{
+    margin: 5% 0;
+}
+footer .info-footer div a{
+    color: white;
+    font-size: large;
+    text-decoration: none;
+}
+/* end footer */

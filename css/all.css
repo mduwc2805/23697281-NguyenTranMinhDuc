@@ -1,0 +1,149 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Phần logo */
+.nav-logo{
+    margin-left: 1%;
+    font-size: large;
+}
+.nav-logo a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+.nav-logo span{
+    color: whitesmoke;  
+    font-weight: bolder;
+}
+/* End logo */
+
+/* Phần toggle nav */
+.navbar-toggler{
+    cursor: pointer;
+    color: whitesmoke;
+}
+/* End toggle nav */
+
+/* Phần collapse */
+#navbar-menu ul{
+    display: flex;
+    width: 100%;
+    margin-left: 5%;
+    align-items: center;
+}
+#navbar-menu ul li{
+    font-weight: 400;
+    margin: 0 1%;
+    padding: 1%;
+}
+#navbar-menu ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+#navbar-menu ul li.active{
+    background-color: #ff8181;
+    border-radius: 100px;
+}
+#navbar-menu ul li:hover{
+    background-color: #ff8181;
+    color: #ff8181;
+    border-radius: 100px;
+    text-decoration: none;
+}
+/* End collapse */
+
+/* Form */
+#navbar-menu ul form .group-form{
+    display: flex;
+    align-items: center;
+    
+}
+#navbar-menu ul form .group-form input{
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: auto;
+    padding: 9%;
+}
+#navbar-menu ul form .group-form button{
+    height: 39px;
+}
+/* End form */
+
+/* Phần dropdown */
+#navbar-menu ul li .dropdownSanPham{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    top: 10px;
+}
+#navbar-menu ul li .dropdownSanPham .card-info{
+    padding: 5%;
+}
+#navbar-menu ul li .dropdownSanPham .card-info h5{
+    color: black;
+}
+#navbar-menu ul li .dropdownSanPham .card-info a{
+    font-size: 15px;
+    font-weight: 500;
+    color: grey ;
+}
+#navbar-menu ul li .dropdownSanPham .card-info a:hover{
+    color: #ff8181 ;
+}
+#navbar-menu ul li .dropdownSanPham .card-info hr{
+    border: 2px solid black;
+    width: 15%;
+    margin-right: 100%;
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner3{
+    margin-top: 20%;
+    background-image: url(../img/banner3.jpg);
+    width: 150px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner3:hover{
+    transform: scale(1.05);
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner4{
+    margin-top: 5%;
+    background-image: url(../img/banner4.jpg);
+    width: 150px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner4:hover{
+    background-image: url(../img/banner6.png);
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner5{
+    margin-top: 20%;
+    background-image: url(../img/banner5.webp);
+    width: 150px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    transition: background-image 0.5s ease-in-out;
+}
+#navbar-menu ul li .dropdownSanPham .card-info .banner5:hover{
+    background-image: url(../img/banner7.jpg);
+}
+#navbar-menu ul li .dropdownSanPham{
+    display: none;
+}
+#navbar-menu ul li:hover .dropdownSanPham{
+    display: block;
+}
+/* End dropdown */

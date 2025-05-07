@@ -1,0 +1,62 @@
+.countdown-container {
+    display: flex;
+    gap: 3%;
+    justify-content: center;
+}
+.countdown-box {
+    background-color: black;
+    color: white;
+    padding: 1%;
+    border-radius: 10%;
+    font-weight: bold;
+}
+.card:hover{
+    opacity: 80%;
+    width: 120%;
+    text-decoration: none;
+}
+.card{
+    border: 0px;
+    font-size: 15px;
+    color: #495057;
+    font-weight: bolder;
+}
+.price-glasses{
+    background-color: #28a745;
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    padding: 5%;
+    margin-top: 5%;
+}
+.dangBanChay{
+    background-color: red;
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    margin-top: 5%;
+    padding: 1%;
+}
+#SanPhamBanChay .groupSanPhamBanChay .container .row .Card{
+    height: 100%;
+    background-color: aqua;
+}
+
+#SanPhamBanChay .groupSanPhamBanChay .container .row .card img{
+    display: block;
+    
+    border-radius: 10px;
+}
+#SanPhamBanChay .groupSanPhamBanChay .container .row .card .name{
+    font-size: 13px;
+}
+#SanPhamBanChay .groupSanPhamBanChay .container .row .card .price{
+    color: white;
+    font-size: 15px;
+    padding: 3%;
+    border-radius: 100px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(85, 213, 210);
+}
