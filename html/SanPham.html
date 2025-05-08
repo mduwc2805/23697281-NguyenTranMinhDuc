@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbar-nav">
             <ul class="navbar-nav">
 
-                <li class="TrangChu active">
+                <li class="TrangChu">
                     <a class="" href="../html/TrangChu.html">
                         <i class="fa fa-home"></i>
                         TRANG CHỦ
@@ -49,13 +49,13 @@
                 </li>
 
                 <li class="GioiThieu">
-                    <a class="" href="#">
+                    <a class="" href="../html/GioiThieu.html">
                         <i class="fa fa-shop" ></i>
                         GIỚI THIỆU
                     </a>
                 </li>
 
-                <li class="SanPham">
+                <li class="SanPham active">
                     <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
                         <i class="fa fa-list" ></i>
                         SẢN PHẨM    
@@ -112,12 +112,6 @@
                     </div>
                 </li>
                 
-                <li class="TinTuc">
-                    <a class="" href="#">
-                        <i class="fa fa-shop" ></i>
-                        TIN TỨC
-                    </a>
-                </li>
                 
                 <li class="LienHe">
                     <a class="" href="#">
@@ -126,7 +120,7 @@
                     </a>
                 </li>
 
-                <li class="DangKy">
+                <li id="DangKy" style="color: white;">
                     <a class="" href="../html/DangKy.html">
                         <i class="fa-solid fa-user"></i>
                     </a>
@@ -145,6 +139,9 @@
                     </button>
                 </form>
 
+                <li class="DangXuat">
+                    <button id="logoutButton" class="btn" style="display: none; color: white; padding: 0px;">Đăng xuất!</button>
+                </li>   
                 
             </ul>
         </div>
@@ -373,7 +370,39 @@
         </div>
     </footer>
     
+    <script>
+        // Kiểm tra trạng thái đăng nhập khi vào trang
+        window.onload = function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (isLoggedIn === "true") {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            
+            const dangKyElement = document.getElementById("DangKy");
+            const logoutButton = document.getElementById("logoutButton");
+            if (currentUser) {
+                dangKyElement.innerHTML = `Chào ${currentUser.username}!`;
+            }
+
+            if (logoutButton) {
+                logoutButton.style.display = "block";
+            }
+        }
+        };
+
     
+        // Xử lý sự kiện đăng xuất
+        const logoutBtn = document.getElementById("logoutButton");
+
+        if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            alert("Đăng xuất thành công!");
+            window.location.href = "DangNhap.html";
+        });
+        }   
+    </script>
 </body>
 
 </html>

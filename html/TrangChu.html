@@ -43,7 +43,7 @@
                 </li>
 
                 <li class="GioiThieu">
-                    <a class="" href="#">
+                    <a class="" href="../html/GioiThieu.html">
                         <i class="fa fa-shop" ></i>
                         GIỚI THIỆU
                     </a>
@@ -387,38 +387,7 @@
             this.classList.add('active');
         });
         });
-        // Kiểm tra trạng thái đăng nhập khi vào trang
         
-        window.onload = function () {
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-        if (isLoggedIn === "true") {
-            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            
-            const dangKyElement = document.getElementById("DangKy");
-            const logoutButton = document.getElementById("logoutButton");
-            if (currentUser) {
-            dangKyElement.innerHTML = `Chào ${currentUser.username}!`;
-            }
-
-            if (logoutButton) {
-            logoutButton.style.display = "block";
-            }
-        }
-        };
-
-    
-        // Xử lý sự kiện đăng xuất
-        const logoutBtn = document.getElementById("logoutButton");
-
-        if (logoutBtn) {
-        logoutBtn.addEventListener("click", function () {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("currentUser");
-            alert("Đăng xuất thành công!");
-            window.location.href = "DangNhap.html";
-        });
-        }
         
         
     </script>

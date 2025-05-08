@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <title>Đăng ký tài khoản</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap 4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <!-- js -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/myJS.js"></script>
+<style>
     body {
       background: darkseagreen;
       min-height: 100vh;
@@ -113,6 +118,11 @@
 
       let isValid = true;
 
+      // Kiểm tra tên đăng nhập đã tồn tại
+      if (localStorage.getItem("user_" + username)) {
+        usernameError.textContent = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
+        isValid = false;
+      }
       // Kiểm tra tên đăng nhập không được là số
       const usernameOnlyNumbers = /^\d+$/;
       if (usernameOnlyNumbers.test(username)) {

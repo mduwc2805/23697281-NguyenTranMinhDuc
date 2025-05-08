@@ -1,21 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="vi"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>Giới Thiệu</title>
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/SanPham.css">
     <!-- js -->
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/myJS.js"></script>
-    <script src="../js/SanPham.js"></script>
-    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: wheat;
+            color: black;
+        }
+        
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .team-member {
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-member h4 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .team-member p {
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        h2,
+        h3 {
+            color: #fff;
+        }
+        
+        ul {
+            list-style: none;
+        
+        }
+    </style>
 </head>
+
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-xl sticky-top mb-4" style="background-color: black;">
@@ -36,21 +92,21 @@
         <div class="collapse navbar-collapse" id="navbar-nav">
             <ul class="navbar-nav">
 
-                <li class="TrangChu ">
+                <li class="TrangChu">
                     <a class="" href="../html/TrangChu.html">
                         <i class="fa fa-home"></i>
                         TRANG CHỦ
                     </a>
                 </li>
 
-                <li class="GioiThieu">
+                <li class="GioiThieu active">
                     <a class="" href="../html/GioiThieu.html">
                         <i class="fa fa-shop" ></i>
                         GIỚI THIỆU
                     </a>
                 </li>
 
-                <li class="SanPham active">
+                <li class="SanPham">
                     <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
                         <i class="fa fa-list" ></i>
                         SẢN PHẨM    
@@ -108,6 +164,7 @@
                 </li>
                 
                 
+                
                 <li class="LienHe">
                     <a class="" href="#">
                         <i class="fa fa-shop" ></i>
@@ -136,52 +193,43 @@
 
                 <li class="DangXuat">
                     <button id="logoutButton" class="btn" style="display: none; color: white; padding: 0px;">Đăng xuất!</button>
-                </li> 
+                </li>
+                
             </ul>
         </div>
     </nav>
+    
+    <div class="container mt-5 about-section">
+        <h2 class="text-center mb-4">Giới Thiệu Website</h2>
 
-
-    <!-- FirstLine -->
-    <div class="FirstLine d-flex justify-content-center align-items-center">
-        <div class="DieuHuong">
-            <div><a href="../html/TrangChu.html">Trang chủ</a></div> &nbsp;
-            <div><a href="#">/</a></div> &nbsp;
-            <div><a class="text-dark font-weight-bold" href="../html/SanPham.html">Cửa hàng</a></div>
-        </div>
-            
-        <div class="KetQua">Hiển thị tất cả 8 kết quả</div>
-        <form>
-            <select>
-                <option value="orderedByDefault" selected="selected">Thứ tự mặc định</option>
-                <option value="orderedByNewest">Mới nhất</option>
-                <option value="orderedByPriceDesc">Giá cao đến thấp</option>
-                <option value="orderedByPrice">Giá thấp đến cao</option>
-            </select>
-        </form>
-    </div>
-   
-    <!-- Color -->
-    <div class="content ">
-        <div class="line">
-            <div class="LocMau">
-                <h6 style="text-align: center; font-weight: bold;">Màu Sắc</h6>
-                <div class="color-options">
-                    <div class="color-option" style="background-color: black;"></div>
-                    <div class="color-option" style="background-color: white;"></div>
-                    <div class="color-option" style="background-color: seagreen;"></div>
-                    <div class="color-option" style="background-color: brown;"></div>
-                    <div class="color-option" style="background-color: yellow;"></div>
-                </div>
-            </div>
-            
-            <div id="batdau" class="SanPham row">
-
+        <div class="row">
+            <div class="col-12">
+                <h3>Chào mừng đến với SUPER GLASSES</h3>
+                <p>Website này được xây dựng nhằm mục đích cung cấp một nền tảng mua sắm các loại kính mắt trực tuyến. Các tính năng chính của website bao gồm:</p>
+                <ul>
+                    <li>Đăng ký và đăng nhập tài khoản người dùng</li>
+                    <li>Danh mục sản phẩm đa dạng, dễ dàng tìm kiếm và lựa chọn</li>
+                    <li>Giỏ hàng để lưu trữ sản phẩm yêu thích và thanh toán nhanh chóng</li>
+                    <li>Hỗ trợ thanh toán trực tuyến an toàn và tiện lợi</li>
+                </ul>
+                <p>Chúng tôi cam kết mang lại những trải nghiệm mua sắm tuyệt vời và dịch vụ hỗ trợ khách hàng chuyên nghiệp.</p>
             </div>
         </div>
-    </div>
-   
 
+        <h3 class="text-center mt-5">Thành Viên Thực Hiện</h3>
+        <div class="row">
+            <div class="col-md-4 team-member">
+                <h4>Nguyễn Trần Minh Đức</h4>
+                <p>Thành viên thực hiện chính của website.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="../html/TrangChu.html" class="btn btn-primary">Quay lại Trang Chủ</a>
+        </div>
+    </div>
+
+    <!-- footer -->
     <footer class="row">
         <div class="col-xl-7 col-12">
             <div class="row">
@@ -195,7 +243,7 @@
             <div class="row">
                 <div class="inputEmail col-12">
                     <input type="text" placeholder="Để lại email của bạn">
-                    <i class="fa-solid fa-arrow-up-long" style=" background-color: white; color: orange; padding: 20px; border-radius: 100px; cursor: pointer;"></i>
+                    <i class="fa-solid fa-arrow-up-long" style=" background-color: #eee; color: orange; padding: 20px; border-radius: 100px; cursor: pointer;"></i>
                 </div>
             </div>
 
@@ -235,10 +283,9 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Kiểm tra trạng thái đăng nhập khi vào trang
-        window.onload = function () {
+<script>
+    // Kiểm tra trạng thái đăng nhập khi vào trang
+    window.onload = function () {
         const isLoggedIn = localStorage.getItem("isLoggedIn");
 
         if (isLoggedIn === "true") {
@@ -268,7 +315,6 @@
             window.location.href = "DangNhap.html";
         });
         }
-    </script>
-</body>
+</script>
 
-</html>
+</body></html>
