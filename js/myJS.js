@@ -9,13 +9,14 @@ $(document).ready(function() {
                 "height":"800px",
                 "top":"6px",
                 "padding":"0px"
-            });
+            }); 
         } else {
             $("#navbar-nav ul li .dropdownSanPham").css({
                 "width":"800px",
                 "height":"400px",
                 "top":"10px"
             });
+            
         }
     }
     $("#search-input").focus(function(){
@@ -69,6 +70,38 @@ $(document).ready(function() {
           });
         }
       });
+
+      // Kiểm tra trạng thái đăng nhập khi vào trang
+      window.onload = function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (isLoggedIn === "true") {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            
+            const dangKyElement = document.getElementById("DangKy");
+            const logoutButton = document.getElementById("logoutButton");
+            if (currentUser) {
+                dangKyElement.innerHTML = `Chào ${currentUser.username}!`;
+            }
+
+            if (logoutButton) {
+            logoutButton.style.display = "block";
+            }
+        }
+        };
+
+    
+        // Xử lý sự kiện đăng xuất
+        const logoutBtn = document.getElementById("logoutButton");
+
+        if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            alert("Đăng xuất thành công!");
+            window.location.href = "DangNhap.html";
+        });
+        }
     checkScreenSize(); // Kiểm tra ngay khi tải trang
     $(window).resize(checkScreenSize); // Kiểm tra lại khi thay đổi kích thước cửa sổ
     $("#SanPham").click(clickDropDownSanPham);
