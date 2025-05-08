@@ -123,6 +123,7 @@
         usernameError.textContent = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
         isValid = false;
       }
+      
       // Kiểm tra tên đăng nhập không được là số
       const usernameOnlyNumbers = /^\d+$/;
       if (usernameOnlyNumbers.test(username)) {
@@ -134,6 +135,17 @@
       if (!email.endsWith("@gmail.com")) {
         emailError.textContent = "Email phải có đuôi @gmail.com.";
         isValid = false;
+      }
+
+      for (let key in localStorage) {
+      if (key.startsWith("user_")) {
+        const user = JSON.parse(localStorage.getItem(key));
+        if (user.email === email) {
+          emailError.textContent = "Email đăng nhập đã tồn tại. Vui lòng chọn email khác..";
+          isValid = false;
+          break;
+        }
+      }
       }
 
       // Kiểm tra mật khẩu có ít nhất 6 ký tự
