@@ -55,7 +55,7 @@ $(document).ready(function() {
             $("#batdau").append(
               `
               <div id="${item.id}" class="Card col-xl-3 col-md-6 col-12">
-                    <div class="Anh-chinh"></div>
+                    <div class="Anh-chinh" data-toggle="modal" data-target="#${item.id}s"></div>
                     <div class="name mt-2">${item.name}</div>
                     <div class="price">${item.price}                 <i class="fa-solid fa-arrow-up"></i></div>
                     <button class="add-to-cart" 
@@ -64,6 +64,40 @@ $(document).ready(function() {
                         data-price="${item.price}"
                         data-image="${item.img}">Thêm Vào Giỏ Hàng
                     </button>
+
+                    <div class="modal fade" id="${item.id}s" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="productModalLabel">Giới thiệu sản phẩm</h5>
+                        </div>
+                  
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col-md-6 text-center">
+                              <img src="${item.img}" alt="Sản phẩm" class="img-fluid rounded">
+                            </div>
+                            <div class="col-md-6">
+                              <h4>Tên sản phẩm: ${item.name}</h4>
+                              <p>Mô tả: Thiết kế hiện đại, chống tia UV, phù hợp với mọi gương mặt.</p>
+                              <p><strong>Giá:</strong> ${item.price}</p>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                          <button class="add-to-cart btn btn-success" 
+                                data-id="${item.id}"
+                                data-name="${item.name}"
+                                data-price="${item.price}"
+                                data-image="${item.img}">Thêm Vào Giỏ Hàng
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                `
             );
