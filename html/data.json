@@ -1,0 +1,44 @@
+[
+  {
+    "id":"Card1",
+    "name": "GỌNG CỐT YS9267",
+    "img": "../img/GKYS9267/GKYS9267Black.jpeg",
+    "price":"250.000 vnđ",
+    "color":"black white yellow"
+  },
+  {
+    "id":"Card2",
+    "name": "GỌNG VIỀN NHỰA S20272",
+    "img": "../img/GKS20272/GKS20272Black.jpeg",
+    "price":"300.000 vnđ",
+    "color":"black brown yellow green"
+  },
+  {
+    "id":"Card3",
+    "name": "GỌNG VIỀN NHỰA AN221425",
+    "img": "../img/GKAN221425/GKAN221425.jpeg",
+    "price":"350.000 vnđ",
+    "color":""
+  },
+  {
+    "id":"Card4",
+    "name": "KÍNH MÁT GENTLE MONSTER HOVO",
+    "img": "../img/GentleMonsterHovo/black.webp",
+    "price":"299.000 vnđ",
+    "color":"black blue white"
+  },
+  {
+    "id":"Card5",
+    "name": "KÍNH MÁT PHÂN CỰC 9 LỚP LỌC VEITHDIA 8210",
+    "img": "../img/KinhVeihdia8210/Black.webp",
+    "price":"290.000 vnđ",
+    "color":"black yellow blue"
+  },
+  {
+   "id":"Card6",
+    "name": "KÍNH RÂM THỜI TRANG AN229080",
+    "img": "../img/KinhRamAN229080/Black.jpeg",
+    "price":"300.000 vnđ",
+    "color":"black white brown yellow"
+  }
+]

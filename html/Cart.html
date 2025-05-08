@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <!-- js -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/myJS.js"></script>
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-xl sticky-top mb-4" style="background-color: black;">
+        
+    <div class="navbar-logo">
+        <a href="../html/TrangChu.html">
+            <img src="../img/logo.png" alt="logo" style="width: 70x; height: 70px;">
+            <span>Super Glasses</span>
+        </a>
+    </div>
+
+    
+    <div class="navbar-toggler" data-toggle="collapse" data-target="#navbar-nav" >
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    
+    
+    <div class="collapse navbar-collapse" id="navbar-nav">
+        <ul class="navbar-nav">
+
+            <li class="TrangChu active">
+                <a class="" href="../html/TrangChu.html">
+                    <i class="fa fa-home"></i>
+                    TRANG CHỦ
+                </a>
+            </li>
+
+            <li class="GioiThieu">
+                <a class="" href="#">
+                    <i class="fa fa-shop" ></i>
+                    GIỚI THIỆU
+                </a>
+            </li>
+
+            <li class="SanPham">
+                <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
+                    <i class="fa fa-list" ></i>
+                    SẢN PHẨM    
+                </a>
+                <div class="position-relative">
+                    <div class="dropdownSanPham">
+                        <div class="row">
+                            <div class="col-xl-3 col-6">
+                                <div class="card-info">
+                                    <h5>KÍNH MÁT</h5>
+                                    <hr>
+                                    <div><a href="../html/SanPham.html">Kính Mát Nam</a></div>
+                                    <div><a href="../html/SanPham.html">Kính Mát Nữ</a></div>
+                                    <div><a href="../html/SanPham.html">Kính Thể Thao</a></div>
+                                    <div class="banner3"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6">
+                                <div class="card-info">
+                                    <h5>TRÒNG KÍNH</h5>
+                                    <hr>
+                                    <div><a href="../html/SanPham.html">Tròng Kính Chống Ánh Sáng Xanh</a></div>
+                                    <div><a href="../html/SanPham.html">Tròng Kính Đổi Màu</a></div>
+                                    <div><a href="../html/SanPham.html">Đa Tròng</a></div>
+                                    <div class="banner4"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6">
+                                <div class="card-info">
+                                    <h5>GỌNG KÍNH</h5>
+                                    <hr>
+                                    <div><a href="../html/SanPham.html">Gọng Kính Nửa Khung</a></div>
+                                    <div><a href="../html/SanPham.html">Gọng Kính Khoan</a></div>
+                                    <div><a href="../html/SanPham.html">Gọng Kính Titan</a></div>
+                                    <div class="banner5"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6">
+                                <div class="card-info">
+                                    <h5>KÍNH ÁP TRÒNG</h5>
+                                    <hr>
+                                    <div><a href="../html/SanPham.html">Kính Áp Tròng Không Màu</a></div>
+                                    <div><a href="../html/SanPham.html">Kính Áp Tròng Màu</a></div>
+                                    <br>
+                                    <h5>KÍNH TRẺ EM</h5>
+                                    <hr>
+                                    <div><a href="../html/SanPham.html">Gọng Kính Trẻ Em</a></div>
+                                    <div><a href="../html/SanPham.html">Kính Mát Trẻ Em</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            
+            
+            
+            <li class="LienHe">
+                <a class="" href="#">
+                    <i class="fa fa-shop" ></i>
+                    LIÊN HỆ
+                </a>
+            </li>
+
+            <li id="DangKy" style="color: white;">
+                <a class="" href="../html/DangKy.html">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
+
+            <li class="GioHang">
+                <a class="" href="../html/Cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+
+            <form id="search-box">
+                <input id="search-input" type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <li class="DangXuat">
+                <button id="logoutButton" class="btn" style="display: none; color: white; padding: 0px;">Đăng xuất!</button>
+            </li>
+            
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Cart -->
+  <h2 class="p-4">Giỏ hàng của bạn</h2>
+  <div class="pl-4" id="cart-items"></div>
+  <h3 class="pl-4" id="total"></h3>
+  <button class="btn btn-danger ml-4" onclick="clearCart()">🗑 Xóa toàn bộ giỏ hàng</button>
+  <a class="btn btn-outline-primary" href="../html/SanPham.html">← Quay lại mua hàng</a>
+
+  <!-- Thanh toán -->
+  
+<!-- Nút để mở Modal -->
+  <div>
+    <button id="paymentButton" class="btn btn-outline-info ml-4 mt-2" data-toggle="modal" data-target="#paymentModal">Thanh toán</button>
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Thông tin thanh toán</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Đóng">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="paymentForm">
+          <div class="form-group">
+            <label for="fullname">Họ và tên</label>
+            <input type="text" class="form-control" id="fullname" placeholder="Nguyễn Văn A" required>
+            <div id="fullnameError" class="error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Số điện thoại</label>
+            <input type="tel" class="form-control" id="phone" placeholder="0123456789" required>
+            <div id="phoneError" class="error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Địa chỉ</label>
+            <input type="text" class="form-control" id="address" required>
+            <div id="addressError" class="error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="paymentMethod">Phương thức thanh toán</label>
+            <select class="form-control" id="paymentMethod" required>
+              <option value="">Chọn phương thức thanh toán</option>
+              <option value="cash">Tiền mặt khi nhận hàng</option>
+              <option value="bank">Chuyển khoản ngân hàng</option>
+              <option value="creditCard">Thanh toán qua thẻ tín dụng</option>
+            </select>
+            <div id="paymentMethodError" class="error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="note">Ghi chú (không bắt buộc)</label>
+            <textarea class="form-control" id="note" rows="3"></textarea>
+          </div>
+
+          <div id="modal-total">
+            <p>Thành Tiền: <span id="modal-total-amount">0 VND</span></p>
+          </div>
+
+          <button type="submit" class="btn btn-outline-info btn-block">Xác nhận thanh toán</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- footer -->
+  <footer class="row" style="margin-top: 100px;">
+    <div class="col-xl-7 col-12">
+        <div class="row">
+            <div class="logo-footer col-12"><img src="../img/logo.png" alt="" height="100px" width="100px"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" style="color: white; padding-left: 10%; padding-top: 5%; font-size: large; font-weight: 600;">Đăng kí để nhận tin mới nhất</div>
+        </div>
+
+        <div class="row">
+            <div class="inputEmail col-12">
+                <input type="text" placeholder="Để lại email của bạn">
+                <i class="fa-solid fa-arrow-up-long" style=" background-color: #eee; color: orange; padding: 20px; border-radius: 100px; cursor: pointer;"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" style="padding-left: 10%;">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-2 col-12 pl-5">
+        <div class="title-footer">SẢN PHẨM</div>
+        <div class="info-footer">
+            <div><a href="#">The TiTan</a></div>
+            <div><a href="#">Gọng Kính</a></div>
+            <div><a href="#">Tròng Kính</a></div>
+            <div><a href="#">Kính Râm</a></div>
+            <div><a href="#">Kính râm trẻ em</a></div>
+        </div>
+
+        <div class="title-footer">CHÍNH SÁCH MUA HÀNG</div>
+        <div class="info-footer">
+            <div><a href="#">Hình thức thanh toán</a></div>
+            <div><a href="#">Chính sách giao hàng</a></div>
+            <div><a href="#">Chinh sách bảo hành</a></div>
+
+        </div>
+    </div>
+
+    <div class="col-xl-2 col-12 pl-5">
+        <div class="title-footer">THÔNG TIN LIÊN HỆ</div>
+        <div class="info-footer">
+            <div><a href="">1900xxxx</a></div>
+            <div><a href="">marketing@superglasses.com</a></div>
+        </div>
+    </div>
+</footer>
+<img src="" alt="">
+  <script>
+    function renderCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = $("#cart-items");
+  cartContainer.html("");
+
+  const paymentButton = $("#paymentButton");
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+
+  if (cart.length === 0) {
+    cartContainer.html("<p>Giỏ hàng trống.</p>");
+    $("#total").text("");
+    paymentButton.prop('disabled', true); 
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    const html = `
+      <div class="cart-item" data-id="${item.id}">
+        <img src="${item.image}" width="150px" height="150px" style="border-radius: 20px; margin-bottom: 10px" />
+        <h4>${item.name}</h4>
+        <p>Giá: ${item.price.toLocaleString()} VND</p>
+        <div class="quantity-controls">
+          <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', -1)">➖</button>
+          ${item.quantity}
+          <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', 1)">➕</button>
+        </div>
+        <p>Thành tiền: ${itemTotal.toLocaleString()} VND</p>
+        <button class="btn btn-outline-info" onclick="removeItem('${item.id}')">❌ Xóa</button>
+        <hr>
+      </div>
+    `;
+    cartContainer.append(html);
+  });
+
+  $("#total").text("Tổng tiền: " + total.toLocaleString() + " VND");
+
+  $("#modal-total-amount").text(total.toLocaleString() + " VND");
+
+  if (!isLoggedIn) {
+    alert("Vui lòng đăng nhập để tiếp tục.");
+  } else {
+    if (total > 0) {
+      paymentButton.prop('disabled', false);
+    }
+  }
+}
+
+
+$("#paymentButton").click(function() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+
+  if (!isLoggedIn) {
+    alert("Vui lòng đăng nhập để tiếp tục thanh toán."); 
+    window.location.href = "../html/DangNhap.html"; 
+  } else {
+    
+    $('#paymentModal').modal('show'); 
+  }
+});
+
+function updateQuantity(id, delta) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+
+  item.quantity += delta;
+  if (item.quantity <= 0) {
+    cart = cart.filter(i => i.id !== id);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function removeItem(id) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart = cart.filter(item => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function clearCart() {
+  if (confirm("Bạn có chắc muốn xóa toàn bộ giỏ hàng?")) {
+    localStorage.removeItem("cart");
+    renderCart();
+  }
+}
+
+$(document).ready(function() {
+  renderCart();
+});
+
+document.getElementById("paymentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const fullname = document.getElementById("fullname").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const paymentMethod = document.getElementById("paymentMethod").value;
+
+  const fullnameError = document.getElementById("fullnameError");
+  const phoneError = document.getElementById("phoneError");
+  const addressError = document.getElementById("addressError");
+  const paymentMethodError = document.getElementById("paymentMethodError");
+
+  fullnameError.textContent = "";
+  phoneError.textContent = "";
+  addressError.textContent = "";
+  paymentMethodError.textContent = "";
+
+  let isValid = true;
+
+  const fullnameRegex = /^([A-ZÀ-Ỵ][a-zà-ỹ]+)(\s[A-ZÀ-Ỵ][a-zà-ỹ]+)+$/;
+  if (!fullnameRegex.test(fullname)) {
+    fullnameError.textContent = "Họ tên phải viết hoa chữ cái đầu mỗi từ (VD: Nguyễn Văn A)";
+    isValid = false;
+  }
+
+  const phoneRegex = /^0\d{9}$/;
+  if (!phoneRegex.test(phone)) {
+    phoneError.textContent = "Số điện thoại không hợp lệ (phải bắt đầu bằng 0 và có 10 chữ số)";
+    isValid = false;
+  }
+
+  if (address === "") {
+    addressError.textContent = "Vui lòng nhập địa chỉ.";
+    isValid = false;
+  }
+
+  if (paymentMethod === "") {
+    paymentMethodError.textContent = "Vui lòng chọn phương thức thanh toán.";
+    isValid = false;
+  }
+
+  if (isValid) {
+    alert("Thông tin thanh toán hợp lệ!\nCảm ơn bạn đã đặt hàng.");
+    document.getElementById("paymentForm").reset();
+    $('#paymentModal').modal('hide'); 
+  }
+});
+
+
+    
+  </script>
+</body>
+</html>

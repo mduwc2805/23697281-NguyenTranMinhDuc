@@ -13,46 +13,43 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/myJS.js"></script>
-    <style>
-        
-    </style>
 
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-xl sticky-top mb-4" style="background-color: black;">
-        <!-- Logo  -->
-        <div class="nav-logo ">
+        
+        <div class="navbar-logo">
             <a href="../html/TrangChu.html">
                 <img src="../img/logo.png" alt="logo" style="width: 70x; height: 70px;">
                 <span>Super Glasses</span>
             </a>
         </div>
 
-        <!-- toggler -->
-        <div class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu" >
+        
+        <div class="navbar-toggler" data-toggle="collapse" data-target="#navbar-nav" >
             <i class="fa-solid fa-bars"></i>
         </div>
         
-        <!-- menu links -->
-        <div class="collapse navbar-collapse" id="navbar-menu">
+        
+        <div class="collapse navbar-collapse" id="navbar-nav">
             <ul class="navbar-nav">
 
-                <li class="active">
+                <li class="TrangChu active">
                     <a class="" href="../html/TrangChu.html">
                         <i class="fa fa-home"></i>
                         TRANG CHỦ
                     </a>
                 </li>
 
-                <li class="">
+                <li class="GioiThieu">
                     <a class="" href="#">
                         <i class="fa fa-shop" ></i>
                         GIỚI THIỆU
                     </a>
                 </li>
 
-                <li class="">
+                <li class="SanPham">
                     <a id="SanPham" href="../html/SanPham.html" data-toggle="dropdown">
                         <i class="fa fa-list" ></i>
                         SẢN PHẨM    
@@ -109,45 +106,37 @@
                     </div>
                 </li>
                 
-                <li class=" ">
-                    <a class="" href="#">
-                        <i class="fa fa-shop" ></i>
-                        TIN TỨC
-                    </a>
-                </li>
                 
-                <li class=" ">
+                
+                <li class="LienHe">
                     <a class="" href="#">
                         <i class="fa fa-shop" ></i>
                         LIÊN HỆ
                     </a>
                 </li>
 
-                <li class="">
+                <li id="DangKy" style="color: white;">
                     <a class="" href="../html/DangKy.html">
-                        
-                        ĐĂNG KÝ
+                        <i class="fa-solid fa-user"></i>
                     </a>
                 </li>
 
-                <li class="">
-                    <a class="" href="../html/DangNhap.html">
-                        
-                        ĐĂNG NHẬP
+                <li class="GioHang">
+                    <a class="" href="../html/Cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
 
-                <div>
-                    <form action="">
-                        <div class="group-form">
-                            <input type="text" class="" placeholder="Tìm kiếm ..." size="9%">
-                            <button class="btn btn-outline-secondary bg-light" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <form id="search-box">
+                    <input id="search-input" type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
 
+                <li class="DangXuat">
+                    <button id="logoutButton" class="btn" style="display: none; color: white; padding: 0px;">Đăng xuất!</button>
+                </li>
                 
             </ul>
         </div>
@@ -167,7 +156,7 @@
                         ✨ Khám phá thế giới rõ nét hơn với những chiếc mắt kính hiện đại, thời trang và bảo vệ đôi mắt tuyệt đối."
                     </h3>
                     <button type="button" class="btn btn-outline-light btn-lg">
-                        SHOPPING NOW!
+                        <a href="../html/SanPham.html">SHOPPING NOW!</a>
                     </button>
                 </div>
             </div>
@@ -179,7 +168,7 @@
                         🔆 Cân bằng giữa phong cách và công nghệ – chống ánh sáng xanh, bảo vệ UV, tầm nhìn hoàn hảo!"
                     </h3>
                     <button type="button" class="btn btn-outline-light btn-lg">
-                        SHOPPING NOW!
+                        <a href="../html/SanPham.html">SHOPPING NOW!</a>
                     </button>
                 </div>
             </div>
@@ -200,65 +189,65 @@
     
     
     <!-- San pham ban chay -->
-    <div class=" bg-light">
-        <div class="container ">
-            <h2 class="text-center mb-5">🔥 Sản Phẩm Bán Chạy 🔥</h2>
+    <div class="" style="background-color: antiquewhite;">
+        <div class="container-fluid p-5">
+            <h2 class="text-center pt-5 mb-5">🔥 Sản Phẩm Bán Chạy 🔥</h2>
             <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/GKYS9267/GKYS9267Black.jpeg"  alt="Sản phẩm 1" height="auto" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/GKYS9267/GKYS9267Black.jpeg"  alt="Sản phẩm 1" class="img-fluid">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">GK. GỌNG <br> CỐT <br> YS9267 (48.21.151)</h6>
+                            <h6 class="">GK. GỌNG CỐT <br> YS9267 (48.21.151)</h6>
                             <div class="price-glasses">250.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 2" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 2">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</h6>
+                            <h6 class="">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</h6>
                             <div class="price-glasses">300.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/GKAN221425/GKAN221425.jpeg" class="img-fluid" alt="Sản phẩm 3" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/GKAN221425/GKAN221425.jpeg" class="img-fluid" alt="Sản phẩm 3">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">GK. GỌNG NHỰA AN221425 (50.18.145)</h6>
+                            <h6 class="">GK. GỌNG NHỰA AN221425 (50.18.145)</h6>
                             <div class="price-glasses">350.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/GentleMonsterHovo/blue.webp" class="img-fluid" alt="Sản phẩm 4" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/GentleMonsterHovo/blue.webp" class="img-fluid" alt="Sản phẩm 4">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">KÍNH MÁT GENTLE MONSTER HOVO</h6>
+                            <h6 class="">KÍNH MÁT GENTLE MONSTER HOVO</h6>
                             <div class="price-glasses">299.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/KinhVeihdia8210/Black.webp" class="img-fluid" alt="Sản phẩm 5" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/KinhVeihdia8210/Black.webp" class="img-fluid" alt="Sản phẩm 5">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">KÍNH MÁT PHÂN CỰC 9<br>LỚP LỌC VEITHDIA 8210</h6>
+                            <h6 class="">KÍNH MÁT PHÂN CỰC 9 LỚP LỌC</h6>
                             <div class="price-glasses">290.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <a class="card" href="../html/SanPham.html">
-                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 6" width="100%">
+                <div class="c col-lg-2 col-md-4 col-sm-12">
+                    <a class="" href="../html/SanPham.html">
+                        <img src="../img/GKS20272/GKS20272Black.jpeg" class="img-fluid" alt="Sản phẩm 6">
                         <div class="info-glasses card-body">
-                            <h6 class="font-weight-bold">GK. GỌNG VIỀN NHỰA <br> S20272 (50.18.145)</h6>
+                            <h6 class="">GK. GỌNG VIỀN NHỰA S20272 (50.18.145)</h6>
                             <div class="price-glasses">300.000 VND</div>
                             <div class="dangBanChay">🔥 Đang bán chạy!</div>
                         </div>
@@ -268,28 +257,170 @@
         </div>
     </div>
     
+
+    <div id="SanPhamBanChay">
+        <div class="groupSanPhamBanChay">
+            <div class="container">
+                <h2 class="mt-4 mb-4">BỘ SƯU TẬP NỔI BẬT</h2>
+                <div class="row justify-content-center">
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <div class="image-group">
+                            <img id="mainImage-1" class="main-image" src="../img/GKS20272/GKS20272Black.jpeg" width="300">
+                            <div class="thumbnails">
+                              <img class="thumbnail-circle active" src="../img/GKS20272/GKS20272Black.jpeg" data-image="../img/GKS20272/GKS20272Black.jpeg" data-group="1">
+                              <img class="thumbnail-circle" src="../img/GKS20272/GKS20272Green.jpeg" data-image="../img/GKS20272/GKS20272Green.jpeg" data-group="1">
+                            </div>
+                            <div class="name p-2">GK. GỌNG VIỀN NHỰA S20272 (50.18.145)</div>
+                          </div>
+                    </div>
+                    
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <div class="image-group">
+                            <img id="mainImage-2" class="main-image" src="../img/GKYS9267/GKYS9267Black.jpeg" width="300">
+                            <div class="thumbnails">
+                              <img class="thumbnail-circle active" src="../img/GKYS9267/GKYS9267Black.jpeg" data-image="../img/GKYS9267/GKYS9267Black.jpeg" data-group="2">
+                              <img class="thumbnail-circle" src="../img/GKYS9267/GKYS9267White.jpeg" data-image="../img/GKYS9267/GKYS9267White.jpeg" data-group="2">
+                            </div>
+                            <div class="name p-2">GK. GỌNG VIỀN NHỰA S20272 (50.18.145)</div>
+                          </div>
+                    </div>
+
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <div class="image-group">
+                            <img id="mainImage-3" class="main-image" src="../img/KinhRamAN229080/White-Black.jpeg" width="300">
+                            <div class="thumbnails">
+                              <img class="thumbnail-circle active" src="../img/KinhRamAN229080/White-Black.jpeg" data-image="../img/KinhRamAN229080/White-Black.jpeg" data-group="3">
+                              <img class="thumbnail-circle" src="../img/KinhRamAN229080/Yellow-Black.jpeg" data-image="../img/KinhRamAN229080/Yellow-Black.jpeg" data-group="3">
+                            </div>
+                            <div class="name p-2">GK. GỌNG VIỀN NHỰA S20272 (50.18.145)</div>
+                          </div>
+                    </div>
+                    
+                    <div class="Card col-xl-3 col-md-6 col-12">
+                        <div class="image-group">
+                            <img id="mainImage-4" class="main-image" src="../img/KinhVeihdia8210/Black.webp" width="300">
+                            <div class="thumbnails">
+                              <img class="thumbnail-circle active" src="../img/KinhVeihdia8210/Black.webp" data-image="../img/KinhVeihdia8210/Black.webp" data-group="4">
+                              <img class="thumbnail-circle" src="../img/KinhVeihdia8210/Yellow.webp" data-image="../img/KinhVeihdia8210/Yellow.webp" data-group="4">
+                            </div>
+                            <div class="name p-2">GK. GỌNG VIỀN NHỰA S20272 (50.18.145)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <!-- footer -->
+    <footer class="row">
+        <div class="col-xl-7 col-12">
+            <div class="row">
+                <div class="logo-footer col-12"><img src="../img/logo.png" alt="" height="100px" width="100px"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="color: white; padding-left: 10%; padding-top: 5%; font-size: large; font-weight: 600;">Đăng kí để nhận tin mới nhất</div>
+            </div>
+
+            <div class="row">
+                <div class="inputEmail col-12">
+                    <input type="text" placeholder="Để lại email của bạn">
+                    <i class="fa-solid fa-arrow-up-long" style=" background-color: #eee; color: orange; padding: 20px; border-radius: 100px; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="padding-left: 10%;">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-12 pl-5">
+            <div class="title-footer">SẢN PHẨM</div>
+            <div class="info-footer">
+                <div><a href="#">The TiTan</a></div>
+                <div><a href="#">Gọng Kính</a></div>
+                <div><a href="#">Tròng Kính</a></div>
+                <div><a href="#">Kính Râm</a></div>
+                <div><a href="#">Kính râm trẻ em</a></div>
+            </div>
+
+            <div class="title-footer">CHÍNH SÁCH MUA HÀNG</div>
+            <div class="info-footer">
+                <div><a href="#">Hình thức thanh toán</a></div>
+                <div><a href="#">Chính sách giao hàng</a></div>
+                <div><a href="#">Chinh sách bảo hành</a></div>
+
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-12 pl-5">
+            <div class="title-footer">THÔNG TIN LIÊN HỆ</div>
+            <div class="info-footer">
+                <div><a href="">1900xxxx</a></div>
+                <div><a href="">marketing@superglasses.com</a></div>
+            </div>
+        </div>
+    </footer>
+    
+    
+
     <script>
-        function startCountdown() {
-            let totalSeconds = 24 * 7 * 86400 + 3 * 86400 + 20 * 3600 + 52 * 60 + 3;
-    
-            setInterval(() => {
-                totalSeconds--;
-    
-                let weeks = Math.floor(totalSeconds / (7 * 86400));
-                let days = Math.floor((totalSeconds % (7 * 86400)) / 86400);
-                let hours = Math.floor((totalSeconds % 86400) / 3600);
-                let minutes = Math.floor((totalSeconds % 3600) / 60);
-                let seconds = totalSeconds % 60;
-    
-                document.getElementById("weeks").innerText = weeks;
-                document.getElementById("days").innerText = days;
-                document.getElementById("hours").innerText = hours;
-                document.getElementById("minutes").innerText = minutes;
-                document.getElementById("seconds").innerText = seconds;
-            }, 1000);
+        document.querySelectorAll('.thumbnail-circle').forEach(thumb => {
+        thumb.addEventListener('click', function () {
+            const group = this.dataset.group;
+            const newImage = this.dataset.image;
+
+            // Đổi ảnh chính theo group
+            document.getElementById(`mainImage-${group}`).src = newImage;
+
+            // Xoá class 'active' trong cùng group
+            document.querySelectorAll(`.thumbnail-circle[data-group="${group}"]`).forEach(t => t.classList.remove('active'));
+
+            // Thêm class active
+            this.classList.add('active');
+        });
+        });
+        // Kiểm tra trạng thái đăng nhập khi vào trang
+        
+        window.onload = function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (isLoggedIn === "true") {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            
+            const dangKyElement = document.getElementById("DangKy");
+            const logoutButton = document.getElementById("logoutButton");
+            if (currentUser) {
+            dangKyElement.innerHTML = `Chào ${currentUser.username}!`;
+            }
+
+            if (logoutButton) {
+            logoutButton.style.display = "block";
+            }
         }
+        };
+
     
-        startCountdown();
+        // Xử lý sự kiện đăng xuất
+        const logoutBtn = document.getElementById("logoutButton");
+
+        if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("currentUser");
+            alert("Đăng xuất thành công!");
+            window.location.href = "DangNhap.html";
+        });
+        }
+        
+        
     </script>
     
 </body>
