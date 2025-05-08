@@ -11,6 +11,11 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/myJS.js"></script>
+    <style>
+      .error{
+        color: red;
+      }
+    </style>
 </head>
 <body>
   <!-- navbar -->
@@ -258,8 +263,8 @@
     <div class="col-xl-2 col-12 pl-5">
         <div class="title-footer">THÔNG TIN LIÊN HỆ</div>
         <div class="info-footer">
-            <div><a href="">1900xxxx</a></div>
-            <div><a href="">marketing@superglasses.com</a></div>
+            <div><a href="">123456789</a></div>
+            <div><a href="">minhducnguyen010@gmail.com</a></div>
         </div>
     </div>
 </footer>
@@ -363,54 +368,85 @@ $(document).ready(function() {
   renderCart();
 });
 
-document.getElementById("paymentForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("paymentForm");
 
-  const fullname = document.getElementById("fullname").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const paymentMethod = document.getElementById("paymentMethod").value;
+    const fullnameInput = document.getElementById("fullname");
+    const phoneInput = document.getElementById("phone");
+    const addressInput = document.getElementById("address");
+    const paymentMethodInput = document.getElementById("paymentMethod");
 
-  const fullnameError = document.getElementById("fullnameError");
-  const phoneError = document.getElementById("phoneError");
-  const addressError = document.getElementById("addressError");
-  const paymentMethodError = document.getElementById("paymentMethodError");
+    const fullnameError = document.getElementById("fullnameError");
+    const phoneError = document.getElementById("phoneError");
+    const addressError = document.getElementById("addressError");
+    const paymentMethodError = document.getElementById("paymentMethodError");
 
-  fullnameError.textContent = "";
-  phoneError.textContent = "";
-  addressError.textContent = "";
-  paymentMethodError.textContent = "";
+    const fullnameRegex = /^([A-ZÀ-Ỵ][a-zà-ỹ]+)(\s[A-ZÀ-Ỵ][a-zà-ỹ]+)+$/;
+    const phoneRegex = /^0\d{9}$/;
 
-  let isValid = true;
+    // Hàm kiểm tra từng trường
+    function validateFullname() {
+      const value = fullnameInput.value.trim();
+      if (!fullnameRegex.test(value)) {
+        fullnameError.textContent = "Họ tên phải viết hoa chữ cái đầu mỗi từ (VD: Nguyễn Văn A)";
+        return false;
+      }
+      fullnameError.textContent = "";
+      return true;
+    }
 
-  const fullnameRegex = /^([A-ZÀ-Ỵ][a-zà-ỹ]+)(\s[A-ZÀ-Ỵ][a-zà-ỹ]+)+$/;
-  if (!fullnameRegex.test(fullname)) {
-    fullnameError.textContent = "Họ tên phải viết hoa chữ cái đầu mỗi từ (VD: Nguyễn Văn A)";
-    isValid = false;
-  }
+    function validatePhone() {
+      const value = phoneInput.value.trim();
+      if (!phoneRegex.test(value)) {
+        phoneError.textContent = "Số điện thoại không hợp lệ (phải bắt đầu bằng 0 và có 10 chữ số)";
+        return false;
+      }
+      phoneError.textContent = "";
+      return true;
+    }
 
-  const phoneRegex = /^0\d{9}$/;
-  if (!phoneRegex.test(phone)) {
-    phoneError.textContent = "Số điện thoại không hợp lệ (phải bắt đầu bằng 0 và có 10 chữ số)";
-    isValid = false;
-  }
+    function validateAddress() {
+      const value = addressInput.value.trim();
+      if (value === "") {
+        addressError.textContent = "Vui lòng nhập địa chỉ.";
+        return false;
+      }
+      addressError.textContent = "";
+      return true;
+    }
 
-  if (address === "") {
-    addressError.textContent = "Vui lòng nhập địa chỉ.";
-    isValid = false;
-  }
+    function validatePaymentMethod() {
+      const value = paymentMethodInput.value;
+      if (value === "") {
+        paymentMethodError.textContent = "Vui lòng chọn phương thức thanh toán.";
+        return false;
+      }
+      paymentMethodError.textContent = "";
+      return true;
+    }
 
-  if (paymentMethod === "") {
-    paymentMethodError.textContent = "Vui lòng chọn phương thức thanh toán.";
-    isValid = false;
-  }
+    // Gán sự kiện blur cho từng ô nhập
+    fullnameInput.addEventListener("blur", validateFullname);
+    phoneInput.addEventListener("blur", validatePhone);
+    addressInput.addEventListener("blur", validateAddress);
+    paymentMethodInput.addEventListener("blur", validatePaymentMethod);
 
-  if (isValid) {
-    alert("Thông tin thanh toán hợp lệ!\nCảm ơn bạn đã đặt hàng.");
-    document.getElementById("paymentForm").reset();
-    $('#paymentModal').modal('hide'); 
-  }
-});
+    // Xử lý khi submit form
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const isFullnameValid = validateFullname();
+      const isPhoneValid = validatePhone();
+      const isAddressValid = validateAddress();
+      const isPaymentValid = validatePaymentMethod();
+
+      if (isFullnameValid && isPhoneValid && isAddressValid && isPaymentValid) {
+        alert("Thông tin thanh toán hợp lệ!\nCảm ơn bạn đã đặt hàng.");
+        form.reset();
+        $('#paymentModal').modal('hide');
+      }
+    });
+  });
 
   // Kiểm tra trạng thái đăng nhập khi vào trang
   window.onload = function () {
