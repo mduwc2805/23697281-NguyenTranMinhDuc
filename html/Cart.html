@@ -271,105 +271,104 @@
         </div>
     </div>
 </footer>
-<img src="" alt="">
   <script>
-    function renderCart() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartContainer = $("#cart-items");
-  cartContainer.html("");
+      function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartContainer = $("#cart-items");
+      cartContainer.html("");
 
-  const paymentButton = $("#paymentButton");
+      const paymentButton = $("#paymentButton");
 
-  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+      const isLoggedIn = localStorage.getItem("isLoggedIn"); 
 
-  if (cart.length === 0) {
-    cartContainer.html("<p>Giỏ hàng trống.</p>");
-    $("#total").text("");
-    paymentButton.prop('disabled', true); 
-    return;
-  }
+      if (cart.length === 0) {
+        cartContainer.html("<p>Giỏ hàng trống.</p>");
+        $("#total").text("");
+        paymentButton.prop('disabled', true); 
+        return;
+      }
 
-  let total = 0;
+      let total = 0;
 
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
 
-    const html = `
-      <div class="cart-item" data-id="${item.id}">
-        <img src="${item.image}" width="150px" height="150px" style="border-radius: 20px; margin-bottom: 10px" />
-        <h4>${item.name}</h4>
-        <p>Giá: ${item.price.toLocaleString()} VND</p>
-        <div class="quantity-controls">
-          <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', -1)">➖</button>
-          ${item.quantity}
-          <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', 1)">➕</button>
-        </div>
-        <p>Thành tiền: ${itemTotal.toLocaleString()} VND</p>
-        <button class="btn btn-outline-info" onclick="removeItem('${item.id}')">❌ Xóa</button>
-        <hr>
-      </div>
-    `;
-    cartContainer.append(html);
-  });
+        const html = `
+          <div class="cart-item" data-id="${item.id}">
+            <img src="${item.image}" width="150px" height="150px" style="border-radius: 20px; margin-bottom: 10px" />
+            <h4>${item.name}</h4>
+            <p>Giá: ${item.price.toLocaleString()} VND</p>
+            <div class="quantity-controls">
+              <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', -1)">➖</button>
+              ${item.quantity}
+              <button class="btn btn-outline-light" onclick="updateQuantity('${item.id}', 1)">➕</button>
+            </div>
+            <p>Thành tiền: ${itemTotal.toLocaleString()} VND</p>
+            <button class="btn btn-outline-info" onclick="removeItem('${item.id}')">❌ Xóa</button>
+            <hr>
+          </div>
+        `;
+        cartContainer.append(html);
+      });
 
-  $("#total").text("Tổng tiền: " + total.toLocaleString() + " VND");
+      $("#total").text("Tổng tiền: " + total.toLocaleString() + " VND");
 
-  $("#modal-total-amount").text(total.toLocaleString() + " VND");
+      $("#modal-total-amount").text(total.toLocaleString() + " VND");
 
-  if (!isLoggedIn) {
-    alert("Vui lòng đăng nhập để tiếp tục.");
-  } else {
-    if (total > 0) {
-      paymentButton.prop('disabled', false);
+      if (!isLoggedIn) {
+        alert("Vui lòng đăng nhập để tiếp tục.");
+      } else {
+        if (total > 0) {
+          paymentButton.prop('disabled', false);
+        }
+      }
     }
-  }
-}
 
 
-$("#paymentButton").click(function() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+    $("#paymentButton").click(function() {
+      const isLoggedIn = localStorage.getItem("isLoggedIn"); 
 
-  if (!isLoggedIn) {
-    alert("Vui lòng đăng nhập để tiếp tục thanh toán."); 
-    window.location.href = "../html/DangNhap.html"; 
-  } else {
-    
-    $('#paymentModal').modal('show'); 
-  }
-});
+      if (!isLoggedIn) {
+        alert("Vui lòng đăng nhập để tiếp tục thanh toán."); 
+        window.location.href = "../html/DangNhap.html"; 
+      } else {
+        
+        $('#paymentModal').modal('show'); 
+      }
+    });
 
-function updateQuantity(id, delta) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const item = cart.find(i => i.id === id);
-  if (!item) return;
+    function updateQuantity(id, delta) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
 
-  item.quantity += delta;
-  if (item.quantity <= 0) {
-    cart = cart.filter(i => i.id !== id);
-  }
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-}
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
 
-function removeItem(id) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart = cart.filter(item => item.id !== id);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-}
+    function removeItem(id) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
 
-function clearCart() {
-  if (confirm("Bạn có chắc muốn xóa toàn bộ giỏ hàng?")) {
-    localStorage.removeItem("cart");
-    renderCart();
-  }
-}
+    function clearCart() {
+      if (confirm("Bạn có chắc muốn xóa toàn bộ giỏ hàng?")) {
+        localStorage.removeItem("cart");
+        renderCart();
+      }
+    }
 
-$(document).ready(function() {
-  renderCart();
-});
+    $(document).ready(function() {
+      renderCart();
+    });
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("paymentForm");

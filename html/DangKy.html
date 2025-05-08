@@ -97,77 +97,109 @@
   </div>
 
   <script>
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      
-      const username = document.getElementById("username").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-
+    document.addEventListener("DOMContentLoaded", function () {
+      const usernameInput = document.getElementById("username");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+  
       const usernameError = document.getElementById("usernameError");
       const emailError = document.getElementById("emailError");
       const passwordError = document.getElementById("passwordError");
       const confirmPasswordError = document.getElementById("confirmPasswordError");
-
-      // Reset các thông báo lỗi
-      usernameError.textContent = "";
-      emailError.textContent = "";
-      passwordError.textContent = "";
-      confirmPasswordError.textContent = "";
-
-      let isValid = true;
-
-      // Kiểm tra tên đăng nhập đã tồn tại
-      if (localStorage.getItem("user_" + username)) {
-        usernameError.textContent = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
-        isValid = false;
-      }
-      
-      // Kiểm tra tên đăng nhập không được là số
-      const usernameOnlyNumbers = /^\d+$/;
-      if (usernameOnlyNumbers.test(username)) {
-        usernameError.textContent = "Tên đăng nhập không được là số.";
-        isValid = false;
-      }
-
-      // Kiểm tra email có đuôi @gmail.com
-      if (!email.endsWith("@gmail.com")) {
-        emailError.textContent = "Email phải có đuôi @gmail.com.";
-        isValid = false;
-      }
-
-      for (let key in localStorage) {
-      if (key.startsWith("user_")) {
-        const user = JSON.parse(localStorage.getItem(key));
-        if (user.email === email) {
-          emailError.textContent = "Email đăng nhập đã tồn tại. Vui lòng chọn email khác..";
-          isValid = false;
-          break;
+  
+      function validateUsername() {
+        const username = usernameInput.value.trim();
+        usernameError.textContent = "";
+  
+        if (localStorage.getItem("user_" + username)) {
+          usernameError.textContent = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
+          return false;
         }
+  
+        const usernameOnlyNumbers = /^\d+$/;
+        if (usernameOnlyNumbers.test(username)) {
+          usernameError.textContent = "Tên đăng nhập không được là số.";
+          return false;
+        }
+  
+        return true;
       }
+  
+      function validateEmail() {
+        const email = emailInput.value.trim();
+        emailError.textContent = "";
+  
+        if (!email.endsWith("@gmail.com")) {
+          emailError.textContent = "Email phải có đuôi @gmail.com.";
+          return false;
+        }
+  
+        for (let key in localStorage) {
+          if (key.startsWith("user_")) {
+            const user = JSON.parse(localStorage.getItem(key));
+            if (user.email === email) {
+              emailError.textContent = "Email đăng nhập đã tồn tại. Vui lòng chọn email khác.";
+              return false;
+            }
+          }
+        }
+  
+        return true;
       }
-
-      // Kiểm tra mật khẩu có ít nhất 6 ký tự
-      if (password.length < 6) {
-        passwordError.textContent = "Mật khẩu phải có ít nhất 6 ký tự.";
-        isValid = false;
+  
+      function validatePassword() {
+        const password = passwordInput.value;
+        passwordError.textContent = "";
+  
+        if (password.length < 6) {
+          passwordError.textContent = "Mật khẩu phải có ít nhất 6 ký tự.";
+          return false;
+        }
+  
+        return true;
       }
-
-      // Kiểm tra mật khẩu và xác nhận mật khẩu
-      if (password !== confirmPassword) {
-        confirmPasswordError.textContent = "Mật khẩu xác nhận không khớp.";
-        isValid = false;
+  
+      function validateConfirmPassword() {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+        confirmPasswordError.textContent = "";
+  
+        if (password !== confirmPassword) {
+          confirmPasswordError.textContent = "Mật khẩu xác nhận không khớp.";
+          return false;
+        }
+  
+        return true;
       }
-
-      // Nếu không có lỗi, lưu thông tin người dùng và chuyển hướng
-      if (isValid) {
-        const user = { username, email, password };
-        localStorage.setItem("user_" + username, JSON.stringify(user));
-        alert("Đăng ký thành công!");
-        window.location.href = "DangNhap.html";
-      }
+  
+      usernameInput.addEventListener("blur", validateUsername);
+      emailInput.addEventListener("blur", validateEmail);
+      passwordInput.addEventListener("blur", validatePassword);
+      confirmPasswordInput.addEventListener("blur", validateConfirmPassword);
+  
+      document.getElementById("registerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        const isValid =
+          validateUsername() &&
+          validateEmail() &&
+          validatePassword() &&
+          validateConfirmPassword();
+  
+        if (isValid) {
+          const username = usernameInput.value.trim();
+          const email = emailInput.value.trim();
+          const password = passwordInput.value;
+  
+          const user = { username, email, password };
+          localStorage.setItem("user_" + username, JSON.stringify(user));
+          alert("Đăng ký thành công!");
+          window.location.href = "DangNhap.html";
+        }
+      });
     });
   </script>
+  
 </body>
 </html>
